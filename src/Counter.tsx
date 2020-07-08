@@ -8,11 +8,11 @@ const Counter = () => {
 
     function add(){
         setSubDisabled(false)
-        if(count >= 0 && count < 10){
+        if(count >= -10 && count < 10){
             setCount(count+1)
             return
         }
-        if((count >= 10 && count < 49) || (count < 0 && count >= -50)){
+        if((count >= 10 && count < 49) || (count < 10 && count >= -50)){
             const newCount = count+2
             if(newCount === 50){
                 alert('oi')
@@ -25,11 +25,11 @@ const Counter = () => {
 
     function sub(){
         setAddDisabled(false)
-        if(count > 0 && count <= 10){
+        if(count > -10 && count <= 10){
             setCount(count-1)
             return
         }
-        if((count >= 10 && count <= 50) || (count <= 0 && count >= -49)){
+        if((count >= 10 && count <= 50) || (count <= -10 && count >= -49)){
             const newCount = count-2
             if(newCount === -50){
                 alert('oiaaa')
