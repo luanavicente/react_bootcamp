@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from './Services/api'
+import User from './components/User'
 
 function ConsumingAPI() {
 
@@ -32,13 +33,10 @@ function ConsumingAPI() {
         <>
             <h1>Consuming API</h1>
             { users.map(user => (
-                <div>
-                    <img src={user.picture.medium} alt="fotinha"/>
-                    <br/>
-                    <strong>Nome: </strong> <span>{user.name.first}</span>
-                    <br/>
-                    <strong>E-mail: </strong> <span>{user.email}</span>
-                </div>
+                <>
+                    <User user={user}/>
+                    <hr/>
+                </>
             ))}
         </>
     )
