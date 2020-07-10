@@ -4,7 +4,7 @@ import User from './components/User'
 
 function ConsumingAPI() {
 
-    interface UserData {
+    interface UserData { 
         email: string,
         picture: {
             medium: string
@@ -13,6 +13,9 @@ function ConsumingAPI() {
             title: string,
             first: string,
             last: string
+        },
+        dob:{
+            age: number
         }
     }
 
@@ -22,7 +25,8 @@ function ConsumingAPI() {
         api.get('',{ 
             params: {
                 results: 5,
-                gender: 'female'
+                gender: 'female',
+                nat: 'br'
             } 
         }).then(res => {
             setUsers(res.data.results)
